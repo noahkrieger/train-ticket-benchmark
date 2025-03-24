@@ -41,7 +41,7 @@ public class Contacts {
         }
         Contacts other = (Contacts) obj;
         return name.equals(other.getName())
-                && accountId .equals( other.getAccountId() )
+                && accountId.equals(other.getAccountId())
                 && documentNumber.equals(other.getDocumentNumber())
                 && phoneNumber.equals(other.getPhoneNumber())
                 && documentType == other.getDocumentType();

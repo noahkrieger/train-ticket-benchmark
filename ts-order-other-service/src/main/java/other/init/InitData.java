@@ -2,7 +2,7 @@ package other.init;
 
 import edu.fudan.common.entity.OrderStatus;
 import edu.fudan.common.util.StringUtils;
-import org.apache.tomcat.jni.Time;
+//import org.apache.tomcat.jni.Time;
 import other.entity.Order;
 import edu.fudan.common.entity.SeatClass;
 import other.service.OrderOtherService;

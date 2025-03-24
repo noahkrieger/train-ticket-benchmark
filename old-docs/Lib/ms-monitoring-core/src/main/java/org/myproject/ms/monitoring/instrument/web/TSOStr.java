@@ -4,8 +4,8 @@ package org.myproject.ms.monitoring.instrument.web;
 
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.WriteListener;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.WriteListener;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

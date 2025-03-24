@@ -1,0 +1,52 @@
+services:
+  ts-contacts-service:
+    build:
+      context: ts-contacts-service
+      platforms:
+        - "linux/arm64"
+        - "linux/amd64"
+    image: noahkrieger/ts-contacts-service:latest
+    restart: no
+    depends_on:
+      - ts-contacts-mysql
+    volumes:
+      - /var/lib/mysql
+    ports:
+      - "12347:12347"
+    networks:
+      - my-network
+
+  ts-contacts-mongo:
+    image: mongo
+    networks:
+      - my-network
+
+  ts-contacts-mysql:
+    image: mysql
+    expose:
+      - "3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - my-network
+
+
+
+networks:
+  my-network:
+    # driver: overlay
+    driver: bridge
+
+
+
+#
+#ts-contacts-service:
+#  build: ts-contacts-service
+#  image: ${IMG_REPO}/ts-contacts-service:${IMG_TAG}
+#  restart: always
+#  ports:
+#    - 12347:12347
+#  networks:
+#    - my-network
+
+
