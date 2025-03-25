@@ -6,7 +6,7 @@ services:
         - "linux/arm64"
         - "linux/amd64"
     image: noahkrieger/ts-contacts-service:latest
-    restart: no
+    restart: always
     depends_on:
       - ts-contacts-mysql
     volumes:
@@ -25,8 +25,11 @@ services:
     image: mysql
     expose:
       - "3306"
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: Abcd1234#
+      MYSQL_DATABASE: ts-contacts-mysql
     networks:
       - my-network
 
@@ -34,6 +37,7 @@ services:
 
 networks:
   my-network:
+#    driver: host
     # driver: overlay
     driver: bridge
 
